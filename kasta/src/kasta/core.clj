@@ -53,14 +53,13 @@
       
 
 (defn -main
-  "I don't do a whole lot ... yet."
+  "Processing kasta market and printing nodes route depending on their content"
   [& args]  
   (println (l/local-now))
   (def root-menu ( :body (client/get menu-url {:as :json, :query-params {"v" "1"}})))
   (parse-menu root-menu)
-  (print (* 100 ( / small-categories-count nodes-count)))
+  (print (* 100 (float ( / small-categories-count nodes-count))))
   (print " % из ")
   (print nodes-count)
   (print " категорий")
-  (println (l/local-now))
-)
+  )
